@@ -26,7 +26,7 @@
       </ul>
     </div>
     <transition name="bounce">
-      <div id="resbox" v-show="showRes">
+      <div id="resbox" v-show="showRes"><!--  @click="showRes = false" -->
         <p @click="showRes = false">{{ categoryName }}抽奖结果：</p>
         <div class="container">
           <span
@@ -302,7 +302,7 @@ export default {
       this.createCanvas();
       const { speed } = this;
       window.TagCanvas.Start('rootcanvas', 'tags', {
-        textColour: null,
+        textColour: '#ffff99',
         initial: speed(),
         dragControl: 1,
         textHeight: 20,
@@ -374,7 +374,7 @@ export default {
 #root {
   height: 100%;
   position: relative;
-  background-image: url('./assets/bg1.jpg');
+  background-image: url('./assets/bg2.jpg');
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -393,27 +393,35 @@ export default {
       padding: 0;
       z-index: 9999;
       &.con {
-        right: 20px;
+        right: 50px;
       }
       &.res {
-        right: 100px;
+        right: 120px;
       }
+    }
+    .el-button--text {
+      color: #a7a172;
     }
   }
   .audio {
     position: absolute;
-    top: 100px;
-    right: 30px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #fff;
+    top: 12px;
+    right: 16px;
+    width: 26px;
+    height: 26px;
+    line-height: normal;
+    border: 2px solid #a7a172;
     border-radius: 50%;
     padding: 0;
     text-align: center;
     .iconfont {
-      position: relative;
-      left: 1px;
+      color: #a7a172;
+      font-size: 14px;
+      &.iconplay1 {
+        font-size: 16px;
+        position: relative;
+        left: 2px;
+      }
     }
   }
   .copy-right {
@@ -422,6 +430,7 @@ export default {
     bottom: 0;
     color: #ccc;
     font-size: 12px;
+    display: none;
   }
   .bounce-enter-active {
     animation: bounce-in 1.5s;
@@ -438,11 +447,17 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1280px;
+  width: 100%;
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
+  // background-color: rgba(145, 14, 18, 0.95);
+  // background: linear-gradient(to right, #cb8f25, #9d1313 50%, #cb8f25);
+  // background: radial-gradient(circle at center, #9d1313 60%, #cb8f25);
+  background-color: #ffffcc;
+  z-index: 999;
+  /* cursor: pointer; */
   p {
-    color: red;
+    color: #9d1313;
     font-size: 50px;
     line-height: 120px;
   }
@@ -452,11 +467,12 @@ export default {
     flex-wrap: wrap;
   }
   .itemres {
-    background: #fff;
+    background: #9d1313;
+    color: #ffff99;
     width: 160px;
     height: 160px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    border-radius: 50%;
+    border: none;
     line-height: 160px;
     font-weight: bold;
     margin-right: 20px;
@@ -476,14 +492,68 @@ export default {
       width: 30px;
       height: 22px;
       line-height: 22px;
-      background-color: #fff;
+      // background-color: #fff;
       position: absolute;
       bottom: 0;
-      left: 0;
+      // left: 0;
       font-size: 14px;
       // border-radius: 50%;
       z-index: 1;
     }
   }
+}
+
+$primay-color: #a7a172 !important;//#880d12
+
+.el-button--default {
+  color: $primay-color;
+  // border-color: rgba(167, 161, 114, 0.5) !important;
+  border-color: $primay-color;
+  background: rgba(167, 161, 114, 0.2) !important;
+}
+.el-button--primary {
+  color: #ffffcc !important;
+  background: $primay-color;
+  border-color: $primay-color;
+}
+.el-button:active {
+  color: $primay-color;
+  border-color: $primay-color;
+}
+.el-button:focus, .el-button:hover,
+.el-button--primary:focus, .el-button--primary:hover {
+  color: $primay-color;
+  border-color: $primay-color;
+  background: rgba(167, 161, 114, 0.25) !important;
+}
+.el-button--text:focus, .el-button--text:hover {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+
+.el-select .el-input__inner:focus {
+  border-color: $primay-color;
+}
+.el-select .el-input.is-focus .el-input__inner {
+  border-color: $primay-color;
+}
+.el-select-dropdown__item.selected {
+  color: $primay-color;
+}
+
+.el-radio.is-bordered.is-checked {
+  border-color: $primay-color;
+}
+.el-radio__input.is-checked .el-radio__inner {
+  border-color: $primay-color;
+  background: $primay-color;
+}
+.el-radio__input.is-checked+.el-radio__label {
+  color: $primay-color;
+}
+
+.el-input.is-active .el-input__inner, .el-input__inner:focus {
+  border-color: $primay-color;
 }
 </style>

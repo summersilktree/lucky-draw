@@ -57,27 +57,27 @@ export default {
 .c-Publicity {
   height: 100%;
   // width: 1000px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   position: relative;
   overflow: hidden;
   .el-carousel {
-    width: 80vw;
+    width: 60vw;
     margin: 0 auto;
   }
   .item {
     text-align: center;
-    color: #fff;
+    color: #ffff99;
     font-size: 16px;
     .title {
-      color: #ccc;
+      color: #ffff99;
     }
     .value {
       margin-left: 10px;
     }
     &.actiname {
       .title {
-        color: red;
+        color: #ffff99;
         font-size: 20px;
       }
     }
