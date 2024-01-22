@@ -460,6 +460,7 @@ export default {
     color: #9d1313;
     font-size: 50px;
     line-height: 120px;
+    cursor: pointer;
   }
   .container {
     display: flex;
